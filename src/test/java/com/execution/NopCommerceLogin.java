@@ -46,9 +46,9 @@ public class NopCommerceLogin extends nopCommerceLogin{
 		result =userLogin();
 		statusPassDetails = "Login page verified successfully";
 		statusFailDetails = "Failed to open Login page";
-		imgName = "Loginpage1";
+		imgName = "Loginpage2";
 		er.logResults(result,driver, report, imgName, statusPassDetails, statusFailDetails);
-				
+		er.flush();		
 	}
 
 }
