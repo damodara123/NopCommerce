@@ -63,7 +63,7 @@ public class CommonFunctionalities{
 		 * parameters are element means locator path 
 		 * <p>
  		 * time duration of seconds */
-		public void delay(By element,long time)
+		public void elementdelay(By element,long time)
 		{	
 			WebElement firstResult = new WebDriverWait(driver, Duration.ofSeconds(time))
 			        .until(ExpectedConditions.elementToBeClickable((element)));	
@@ -505,6 +505,16 @@ public class CommonFunctionalities{
 					else
 						driver.switchTo().window(parentWindow);
 				}
+				
+				/** using this method for delay in seconds */
+				public void delay(int timesec) {
+					
+					long start = System.currentTimeMillis();
+					long end = start + timesec * 1000;
+					while (System.currentTimeMillis() < end)
+					{
+					    // Some expensive operation on the item.
+					}
 
-
+				}
 }
