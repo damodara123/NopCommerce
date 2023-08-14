@@ -12,18 +12,18 @@ public class nopCommerceLogin extends Browser{
 	
 	public By password = By.xpath("//input[@name='Password']");
 	
-	public By login = By.xpath("//button[text()='Log in']");
+	public By login = By.xpath("//button[text()='Login']");
 	
 	
 	
 	
-	public void enterEmail()
+	public boolean enterEmail()
 	{
-		enterText(username,"admin@yourstore.com");
+		return enterText(username,"admin@yourstore.com");
 	}
-	public void enterPassword()
+	public boolean enterPassword()
 	{
-		enterText(password,"adminadmin");
+		return enterText(password,"adminadmin");
 	}
 	
 	public boolean userLogin() 

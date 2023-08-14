@@ -13,6 +13,7 @@ public class NopCommerceLogin extends nopCommerceLogin{
 	ExtentReport er = new ExtentReport("NopCommerce_Page");
 	private ExtentTest report;
 	private String statusPassDetails, statusFailDetails, imgName;
+	boolean result;
 	
 	@BeforeClass
 	public void Login() throws Exception 
@@ -30,19 +31,18 @@ public class NopCommerceLogin extends nopCommerceLogin{
 	public void username() 
 	{
 		report = er.createTest("Verify Login Page fields", "To check whether Login page contains 'User Name' and 'Password' text input fields.");
-		enterEmail();		
+		result &= enterEmail();		
 	}
 
 	@Test(priority = 2)
 	public void password() 
 	{
-		enterPassword();		
+		result &= enterPassword();		
 	}
 	
 	@Test(priority = 3)
 	public void login() throws Exception 
 	{
-		boolean result;
 		result =userLogin();
 		statusPassDetails = "Login page verified successfully";
 		statusFailDetails = "Failed to open Login page";
