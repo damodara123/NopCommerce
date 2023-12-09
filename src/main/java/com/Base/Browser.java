@@ -25,7 +25,7 @@ public class Browser extends CommonFunctionalities{
 				
 				if(BrowserName.equalsIgnoreCase("chrome"))
 				{
-					WebDriverManager.chromedriver();
+					WebDriverManager.chromedriver().setup();
 					driver=new ChromeDriver();
 					
 				}

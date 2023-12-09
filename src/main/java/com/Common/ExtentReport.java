@@ -1,7 +1,6 @@
 package com.Common;
 
 import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
@@ -32,15 +31,7 @@ public class ExtentReport {
 		extent.attachReporter(spark);
 	}
 	
-	public ExtentTest createTest(String testName) {
-		ExtentTest report = extent.createTest(testName);
-		return report;
-	}
-	
-	public ExtentTest createTest(String testName, String testDescription) {
-		ExtentTest report = extent.createTest(testName, testDescription);
-		return report;
-	}
+
 	
 	public void testPass(ExtentTest report, String details) {
 		report.pass(details);
@@ -61,9 +52,9 @@ public class ExtentReport {
 		report.pass(details, MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
 	}
 	
-	public String testfail(ExtentTest report, String details) {
+	public void testfail(ExtentTest report, String details) {
 		report.fail(details);
-		return details;
+		//return details;
 	}
 	
 	public String testfailScreenshot(WebDriver eDriver, ExtentTest report, String imgName, String details) throws Exception {
@@ -100,13 +91,25 @@ public class ExtentReport {
 	
 	public void logResults(boolean result, WebDriver eDriver, ExtentTest report, String failImgName, String passMessage, String failMessage) throws Exception {
 		if(result) {
+			//report.log(Status.PASS,passMessage);
 			testPass(report, passMessage);
-		}else {
+		}else{
+			//report.log(Status.FAIL,failMessage);
 			testfailScreenshot(eDriver, report, failImgName, failMessage);
+			testfail(report, failMessage);	
 		}
 		assertTrue(result, failMessage + "\t");
 		System.out.println(passMessage);
 	}
 	
-
+	
+	public ExtentTest createTest(String testName) {
+		ExtentTest report = extent.createTest(testName);
+		return report;
+	}
+	public ExtentTest createTest(String testName, String testDescription) {
+		ExtentTest report = extent.createTest(testName, testDescription);
+		return report;
+	}
+	
 }

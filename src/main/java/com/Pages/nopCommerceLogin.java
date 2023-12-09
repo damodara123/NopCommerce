@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import com.Base.Browser;
+import com.Common.CommonFunctionalities;
 import com.Common.ExtentReport;
 import com.aventstack.extentreports.ExtentTest;
 
@@ -22,12 +23,12 @@ public class nopCommerceLogin extends Browser{
 	{
 		clickElement(username);
 		driver.findElement(username).sendKeys(Keys.CONTROL,"a",Keys.DELETE);
-		return enterText(username,"admin@yourstore.com");
+		return enterText(username,"damodara.palacharla@ramanasoft.com");
 	}
 	public boolean enterPassword()
 	{
 		textClear(password);
-		return enterText(password,"admin");
+		return enterText(password,"Ram@1234");
 	}
 	
 	public boolean userLogin() 

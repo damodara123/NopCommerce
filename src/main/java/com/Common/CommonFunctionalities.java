@@ -81,7 +81,7 @@ public class CommonFunctionalities{
 			if(elementEnable(elementLocator) & elementDisplay(elementLocator))
 			{
 				try
-				{
+				{	driver.findElement(elementLocator).clear();
 					driver.findElement(elementLocator).sendKeys(text);
 					return true;
 				}

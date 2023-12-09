@@ -3,12 +3,25 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.execution.NopCommerceLogin">
+      <class name="com.execution.Registerexe">
         <methods>
+          <include name="EmailEnter"/>
+          <include name="DateSelection"/>
+          <include name="EnterFname"/>
+          <include name="EnterCnfPWD"/>
+          <include name="SelectGender"/>
+          <include name="RegisterButton"/>
+          <include name="EnterPWD"/>
+          <include name="CompanyName"/>
+          <include name="getResult"/>
           <include name="Login"/>
-          <include name="login"/>
+          <include name="MonthSelection"/>
+          <include name="endReport"/>
+          <include name="registerPageNavigation"/>
+          <include name="EnterLname"/>
+          <include name="YearSelection"/>
         </methods>
-      </class> <!-- com.execution.NopCommerceLogin -->
+      </class> <!-- com.execution.Registerexe -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
